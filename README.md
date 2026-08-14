@@ -1,8 +1,9 @@
 # catJS
 
-A faithful **JavaScript port of the subset of the R package
-[catR](https://cran.r-project.org/package=catR)**, to be able to run
-psychological online experiments in browser-based platforms like jspsych.
+A faithful **JavaScript port of the most relevant feature subset of the R package
+[catR](https://cran.r-project.org/package=catR)**.
+
+Useful to run psychological online experiments that require live computerized adaptive testing based on item response theory in browser-based platforms like jspsych.
 
 **This is a proof of concept.** It deliberately does *exactly* what catR does
 (including its quirks and numerics) so that stakeholders can verify *"does it
