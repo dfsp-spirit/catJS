@@ -109,8 +109,12 @@ test('thetaEst / semTheta mirror eapEst / eapSem', () => {
   assert.equal(semTheta(th, it, x, { method: 'EAP' }), eapSem(th, it, x));
 });
 
-test('thetaEst rejects non-EAP methods (not implemented)', () => {
-  assert.throws(() => thetaEst([easy], [1], { method: 'ML' }), /not implemented/);
+test('thetaEst rejects unimplemented methods', () => {
+  // EAP/BM/ML/WL are implemented; ROB and others are not.
+  assert.throws(() => thetaEst([easy], [1], { method: 'ROB' }), /not implemented/);
+  assert.doesNotThrow(() => thetaEst([easy], [1], { method: 'ML' }));
+  assert.doesNotThrow(() => thetaEst([easy], [1], { method: 'BM' }));
+  assert.doesNotThrow(() => thetaEst([easy], [1], { method: 'WL' }));
 });
 
 test('nextItem picks the item with maximum information at theta', () => {

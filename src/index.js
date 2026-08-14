@@ -1,10 +1,13 @@
 /**
  * catJS — a faithful JavaScript port of the subset of the R package `catR`
- * used by the EWM adaptive working memory experiment:
+ * used by the EWM adaptive working memory experiment, extended to cover the
+ * commonly used parts of catR:
  *
- *   - 4PL Item Response Function + Fisher information   (catR: Pi, Ii)
- *   - EAP ability estimation + standard error           (catR: thetaEst, semTheta, method="EAP")
- *   - MFI item selection                                (catR: nextItem, criterion="MFI")
+ *   - 4PL IRF + Fisher information (+ derivatives, Ji)   (catR: Pi, Ii, Ji)
+ *   - ability estimation: EAP, BM, ML, WL × norm/unif/Jeffreys priors
+ *                                                    (catR: thetaEst, semTheta)
+ *   - item selection: MFI, bOpt                       (catR: nextItem)
+ *   - simulation: genPattern, checkStopRule, randomCAT (catR-inspired)
  *
  * Numbers are computed with the exact same formulas and grid as catR
  * (defaults: D=1, priorDist="norm", priorPar=c(0,1), parInt=c(-4,4,33),
@@ -15,23 +18,23 @@
  * inattention). Item indices are 0-indexed throughout the public API.
  */
 
-export { pi, ii } from './irf.js';
+export { pi, ii, ji } from './irf.js';
 export { eapEst, eapSem } from './eap.js';
 import { thetaEst, semTheta } from './estimators.js';
 import { nextItem } from './selection.js';
 export { thetaEst, semTheta } from './estimators.js';
 export { nextItem } from './selection.js';
-export { dnorm, linspace, integrateCatR } from './math.js';
+export { genPattern, simulateRespondents, checkStopRule, randomCAT } from './simulation.js';
+export { dnorm, linspace, integrateCatR, qnorm, uniroot, optimizeScalar } from './math.js';
 
 /**
  * High-level helper matching the experiment's `estimate_theta_catr(...)`:
- * estimate ability (EAP) and its standard error from the items administered
- * so far.
+ * estimate ability and its standard error from the items administered so far.
  *
  * @param {Array<{a,b,c,d}>} itemBank full item bank
  * @param {number[]} administered 0-indexed administered item indices
  * @param {number[]} responses 0/1 responses for the administered items
- * @param {object} [opts] EAP options (method, priorDist, priorPar, parInt, D)
+ * @param {object} [opts] estimation options (method, priorDist, priorPar, parInt, D, ...)
  * @returns {{theta: number, se: number}}
  */
 export function estimateTheta(itemBank, administered, responses, opts = {}) {
@@ -47,12 +50,13 @@ export function estimateTheta(itemBank, administered, responses, opts = {}) {
 
 /**
  * High-level helper matching the experiment's `select_next_item_catr(...)`:
- * select the next item by MFI.
+ * select the next item.
  *
  * @param {Array<{a,b,c,d}>} itemBank full item bank
  * @param {number} theta current ability estimate
  * @param {number[]} administered 0-indexed administered item indices
- * @returns {{item: number, par: object, info: number}} 0-indexed selection
+ * @param {object} [opts] selection options (criterion: 'MFI' | 'bOpt')
+ * @returns {{item: number, par: object, info: number, criterion: string}}
  */
 export function selectNextItem(itemBank, theta, administered, opts = {}) {
   return nextItem(itemBank, theta, administered, { criterion: 'MFI', ...opts });

@@ -65,6 +65,29 @@ simulate_run <- function(true_theta, seed, max_items = 20) {
     se <- semTheta(thEst = theta, it = bank[administered, , drop = FALSE],
                    x = responses, method = "EAP")
 
+    # --- Additional estimation methods / priors (for parity testing)
+    est_one <- function(m, pd = "norm") {
+      th <- thetaEst(it = bank[administered, , drop = FALSE],
+                     x = responses, method = m, priorDist = pd)
+      s <- semTheta(thEst = th, it = bank[administered, , drop = FALSE],
+                    x = responses, method = m, priorDist = pd)
+      list(theta = as.numeric(th), se = as.numeric(s))
+    }
+    estimates <- list(
+      EAP_norm    = est_one("EAP", "norm"),
+      BM_norm     = est_one("BM", "norm"),
+      ML_norm     = est_one("ML", "norm"),
+      WL_norm     = est_one("WL", "norm"),
+      EAP_unif    = est_one("EAP", "unif"),
+      EAP_jeffreys = est_one("EAP", "Jeffreys")
+    )
+
+    # --- bOpt selection (for parity testing)
+    nxt_bopt <- nextItem(
+      itemBank = bank, theta = theta_used, out = administered,
+      x = responses, criterion = "bOpt"
+    )
+
     steps[[k]] <- list(
       step             = k,
       true_theta       = true_theta,
@@ -73,8 +96,10 @@ simulate_run <- function(true_theta, seed, max_items = 20) {
       theta_used       = theta_used,
       selected0        = as.integer(selected) - 1L,         # 0-indexed
       info             = info_vec,
+      bopt0            = as.integer(nxt_bopt$item) - 1L,    # 0-indexed
       theta            = as.numeric(theta),
       se               = as.numeric(se),
+      estimates        = estimates,
       p_true           = p
     )
   }

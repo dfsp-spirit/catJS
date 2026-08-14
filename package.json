@@ -4,13 +4,21 @@
   "description": "Faithful JavaScript port of the subset of the R catR package used by the EWM adaptive experiment (4PL IRF, MFI item selection, EAP ability estimation + SEM).",
   "type": "module",
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "exports": {
-    ".": "./src/index.js"
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    }
   },
+  "files": [
+    "src"
+  ],
   "scripts": {
     "test": "node --test",
     "validate": "node scripts/validate.mjs",
-    "gen:reference": "Rscript scripts/generate_reference.R"
+    "gen:reference": "Rscript scripts/generate_reference.R",
+    "gen:derivatives": "Rscript scripts/generate_reference_derivatives.R"
   },
   "license": "MIT",
   "engines": {
