@@ -11,6 +11,16 @@ A faithful **JavaScript port of the most relevant feature subset of the R packag
 Useful to run psychological online experiments that require live computerized adaptive testing based on item response theory in browser-based platforms like jspsych.
 
 
+
+## About (The longer layman version)
+
+Basically, this lets you run "smart" questionnaires that adapt to each person as they answer:
+
+* Pick the next question on the fly — given a bank of questions with known difficulties and the participant's answers so far, it chooses the next question that will teach you the most about their true ability level (rather than asking everything in a fixed order).
+* Estimate skill live — from the questions asked and how the person answered, it continuously estimates their ability (and how confident that estimate is) after every response.
+* Simulate & test your test — it can generate fake response patterns and run entire adaptive sessions offline, so you can validate question banks and stopping rules before deploying the real experiment (e.g., in jsPsych)
+
+
 ## Installation
 
 
