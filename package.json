@@ -29,11 +29,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dfsp-spirit/catJS.git"
+    "url": "git+https://github.com/dfsp-spirit/catjs-irt.git"
   },
-  "homepage": "https://github.com/dfsp-spirit/catJS",
+  "homepage": "https://github.com/dfsp-spirit/catjs-irt",
   "bugs": {
-    "url": "https://github.com/dfsp-spirit/catJS/issues"
+    "url": "https://github.com/dfsp-spirit/catjs-irt/issues"
   },
   "keywords": [
     "irt",

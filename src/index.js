@@ -1,5 +1,5 @@
 /**
- * catJS — a faithful JavaScript port of the subset of the R package `catR`
+ * catjs-irt — a faithful JavaScript port of the subset of the R package `catR`
  * used by the EWM adaptive working memory experiment, extended to cover the
  * commonly used parts of catR:
  *

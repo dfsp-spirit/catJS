@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Demo: run a short adaptive simulation with catJS and print the trajectory.
+ * Demo: run a short adaptive simulation with catjs-irt and print the trajectory.
  *
  * Usage: node examples/demo.mjs
  */

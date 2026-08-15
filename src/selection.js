@@ -1,6 +1,6 @@
 /**
  * Item selection, mirroring catR's `nextItem()` with the criteria used by
- * catJS: "MFI" (Maximum Fisher Information) and "bOpt" (difficulty closest
+ * catjs-irt: "MFI" (Maximum Fisher Information) and "bOpt" (difficulty closest
  * to current ability), both with randomesque = 1 (catR's default).
  *
  * catR's MFI branch:

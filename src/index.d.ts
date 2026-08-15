@@ -1,10 +1,10 @@
 /**
  * @packageDocumentation
- * catJS — a faithful JavaScript port of the parts of the R package
+ * catjs-irt — a faithful JavaScript port of the parts of the R package
  * [`catR`](https://cran.r-project.org/package=catR) used by the EWM adaptive
  * working-memory experiment.
  *
- * catJS lets you build a **computerized adaptive test (CAT)** that runs
+ * catjs-irt lets you build a **computerized adaptive test (CAT)** that runs
  * entirely in JavaScript (Node or the browser): given a bank of items it picks
  * the most informative next question, then updates the participant's ability
  * estimate after every answer — live, with no server round-trip.
@@ -37,7 +37,7 @@
  *
  * ### Parity note
  *
- * catJS reproduces catR's exact formulas, its 33-point integration grid over
+ * catjs-irt reproduces catR's exact formulas, its 33-point integration grid over
  * [−4, 4], and its numerics (quirks included), so results match the R package
  * to floating-point precision for identical inputs. Defaults mirror catR:
  * `D = 1`, `priorDist = "norm"`, `priorPar = [0, 1]`,
@@ -187,7 +187,7 @@ export interface JiResult {
  *
  * @example
  * ```js
- * import { pi } from 'catjs';
+ * import { pi } from 'catjs-irt';
  *
  * const item = { a: 1.0, b: 0.0, c: 0.2, d: 1.0 };
  *
@@ -226,7 +226,7 @@ export function pi(th: number, item: Item, D?: number): PiResult;
  *
  * @example
  * ```js
- * import { ii } from 'catjs';
+ * import { ii } from 'catjs-irt';
  *
  * const item = { a: 1.0, b: 0.0, c: 0.2, d: 1.0 };
  * ii(0, item).Ii;  // ≈ 0.167 — this item tells us most about people near θ = 0
@@ -284,7 +284,7 @@ export function ji(th: number, item: Item, D?: number): JiResult;
  *
  * @example
  * ```js
- * import { eapEst } from 'catjs';
+ * import { eapEst, eapSem } from 'catjs-irt';
  *
  * const items = [{ a: 1.0, b: -1.0, c: 0.2, d: 0.95 },
  *                { a: 1.5, b:  1.0, c: 0.1, d: 0.98 }];
@@ -328,7 +328,7 @@ export function eapEst(
  *
  * @example
  * ```js
- * import { eapEst, eapSem } from 'catjs';
+ * import { eapEst, eapSem } from 'catjs-irt';
  *
  * const items = [{ a: 1.0, b: -1.0, c: 0.2, d: 0.95 },
  *                { a: 1.5, b:  1.0, c: 0.1, d: 0.98 }];
@@ -382,7 +382,7 @@ export function eapSem(
  *
  * @example
  * ```js
- * import { thetaEst } from 'catjs';
+ * import { thetaEst } from 'catjs-irt';
  *
  * const items = [{ a: 1.0, b: -1.0, c: 0.20, d: 0.95 },
  *                { a: 1.5, b:  1.0, c: 0.10, d: 0.98 }];
@@ -430,7 +430,7 @@ export function thetaEst(it: Item[], x: number[], opts?: EstOpts): number;
  *
  * @example
  * ```js
- * import { thetaEst, semTheta } from 'catjs';
+ * import { thetaEst, semTheta } from 'catjs-irt';
  *
  * const items = [{ a: 1.0, b: -1.0, c: 0.2, d: 0.95 },
  *                { a: 1.5, b:  1.0, c: 0.1, d: 0.98 }];
@@ -480,7 +480,7 @@ export function semTheta(thEst: number, it: Item[], x: number[], opts?: EstOpts)
  *
  * @example
  * ```js
- * import { nextItem } from 'catjs';
+ * import { nextItem } from 'catjs-irt';
  *
  * const bank = [
  *   { a: 1.0, b: -1.0, c: 0.20, d: 0.95 },
@@ -529,7 +529,7 @@ export function nextItem(
  *
  * @example
  * ```js
- * import { genPattern } from 'catjs';
+ * import { genPattern } from 'catjs-irt';
  *
  * const bank = [
  *   { a: 1.0, b: -1.0, c: 0.20, d: 0.95 },
@@ -572,7 +572,7 @@ export function genPattern(
  *
  * @example
  * ```js
- * import { simulateRespondents } from 'catjs';
+ * import { simulateRespondents } from 'catjs-irt';
  *
  * const bank = [{ a: 1.0, b: -1.0, c: 0.2, d: 0.95 },
  *               { a: 1.5, b:  1.0, c: 0.1, d: 0.98 }];
@@ -629,7 +629,7 @@ export function simulateRespondents(
  *
  * @example
  * ```js
- * import { checkStopRule } from 'catjs';
+ * import { checkStopRule } from 'catjs-irt';
  *
  * // Stop when SE ≤ 0.3 OR after 10 items, whichever comes first:
  * checkStopRule(-0.1, 0.3, 8, { rule: ['precision', 'length'], thr: [0.3, 10] });
@@ -706,7 +706,7 @@ export function checkStopRule(
  *
  * @example
  * ```js
- * import { randomCAT } from 'catjs';
+ * import { randomCAT } from 'catjs-irt';
  *
  * const bank = [
  *   { a: 1.0, b: -1.0, c: 0.20, d: 0.95 },
@@ -785,7 +785,7 @@ export function randomCAT(
  *
  * @example
  * ```js
- * import { estimateTheta } from 'catjs';
+ * import { estimateTheta } from 'catjs-irt';
  *
  * const bank = [
  *   { a: 1.0, b: -1.0, c: 0.20, d: 0.95 },
@@ -835,7 +835,7 @@ export function estimateTheta(
  *
  * @example
  * ```js
- * import { selectNextItem } from 'catjs';
+ * import { selectNextItem } from 'catjs-irt';
  *
  * const bank = [
  *   { a: 1.0, b: -1.0, c: 0.20, d: 0.95 },
@@ -899,7 +899,7 @@ export function dnorm(x: number, mean?: number, sd?: number): number;
  *
  * @example
  * ```js
- * import { linspace } from 'catjs';
+ * import { linspace } from 'catjs-irt';
  * linspace(0, 1, 5);   // [0, 0.25, 0.5, 0.75, 1]
  * ```
  */
@@ -918,7 +918,7 @@ export function linspace(from: number, to: number, n: number): number[];
  *
  * @example
  * ```js
- * import { integrateCatR } from 'catjs';
+ * import { integrateCatR } from 'catjs-irt';
  * // Area under a "ramp" y = 2x over [0, 1]:
  * integrateCatR([0, 0.5, 1], [0, 1, 2]);   // 1
  * ```

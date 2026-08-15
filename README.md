@@ -1,14 +1,14 @@
-# catJS
+# catjs-irt
 
-[![CI](https://github.com/dfsp-spirit/catJS/actions/workflows/ci.yml/badge.svg)](https://github.com/dfsp-spirit/catJS/actions/workflows/ci.yml)
-[![Validate](https://github.com/dfsp-spirit/catJS/actions/workflows/validate.yml/badge.svg)](https://github.com/dfsp-spirit/catJS/actions/workflows/validate.yml)
-[![Docs](https://github.com/dfsp-spirit/catJS/actions/workflows/docs.yml/badge.svg)](https://github.com/dfsp-spirit/catJS/actions/workflows/docs.yml)
+[![CI](https://github.com/dfsp-spirit/catjs-irt/actions/workflows/ci.yml/badge.svg)](https://github.com/dfsp-spirit/catjs-irt/actions/workflows/ci.yml)
+[![Validate](https://github.com/dfsp-spirit/catjs-irt/actions/workflows/validate.yml/badge.svg)](https://github.com/dfsp-spirit/catjs-irt/actions/workflows/validate.yml)
+[![Docs](https://github.com/dfsp-spirit/catjs-irt/actions/workflows/docs.yml/badge.svg)](https://github.com/dfsp-spirit/catjs-irt/actions/workflows/docs.yml)
 
 A faithful **JavaScript port of the most relevant feature subset of the R package
 [catR](https://cran.r-project.org/package=catR)**.
 
 > **API docs:** the generated TypeDoc reference is published to GitHub Pages at
-> <https://dfsp-spirit.github.io/catJS/>. Build it locally with `npm run docs`
+> <https://dfsp-spirit.github.io/catjs-irt/>. Build it locally with `npm run docs`
 > (outputs to `docs/`, gitignored).
 
 Useful to run psychological online experiments that require live computerized adaptive testing based on item response theory in browser-based platforms like jspsych.
@@ -19,7 +19,7 @@ do what catR does?"*. Improvements can come later — parity first.
 
 ## What is ported
 
-| catR function                    | catJS (`src/…`)                                        | Notes |
+| catR function                    | catjs-irt (`src/…`)                                     | Notes |
 |----------------------------------|--------------------------------------------------------|-------|
 | `Pi()` / `Ii()` / `Ji()`         | `pi()` / `ii()` / `ji()`  (`irf.js`)                   | 4PL IRF + Fisher info + derivatives |
 | `thetaEst(method="EAP")`         | `thetaEst()` / `estimateTheta()` (`eap.js`, `estimators.js`) | ability estimate |
@@ -44,7 +44,7 @@ Faithfully replicated details:
 ## Usage
 
 ```js
-import { estimateTheta, selectNextItem, randomCAT, genPattern } from 'catjs';
+import { estimateTheta, selectNextItem, randomCAT, genPattern } from 'catjs-irt';
 
 const bank = [
   { a: 1.0, b: -1.0, c: 0.20, d: 0.95 },
@@ -88,7 +88,7 @@ node scripts/validate.mjs
 
 `scripts/generate_reference.R` simulates adaptive runs (selection + estimation
 for EAP/BM/ML/WL and priors) on the item bank and stores catR's exact output in
-`reference/catr_reference.json`. `validate.mjs` replays every step with catJS
+`reference/catr_reference.json`. `validate.mjs` replays every step with catjs-irt
 and reports maximum absolute differences.
 
 > catR samples randomly among items tied at the optimum. The validation
@@ -154,9 +154,9 @@ node examples/demo.mjs
 
 ## Acknowledgements, Getting Help, Author and License
 
-catJS was written by [Tim Schäfer](https://ts.rcmd.org/), who translated the
+catjs-irt was written by [Tim Schäfer](https://ts.rcmd.org/), who translated the
 [catR](https://cran.r-project.org/web/packages/catR/index.html)
-[source code](https://github.com/cran/catR) to JavaScript. **catJS is a
+[source code](https://github.com/cran/catR) to JavaScript. **catjs-irt is a
 JavaScript port of the R package `catR` — it is not written or endorsed by the
 catR authors.** All credit for the methods implemented here goes to them:
 
@@ -168,7 +168,7 @@ The catR package is currently maintained by **Cheng Hua**.
 
 ### Citing catR
 
-If you use catJS in academic work, please cite the catR papers (and your own
+If you use catjs-irt in academic work, please cite the catR papers (and your own
 paper for the adaptive task, if applicable). The authoritative citation
 information is provided in the [catR citation
 file](https://cran.r-project.org/web/packages/catR/citation.html) on CRAN.
@@ -208,17 +208,17 @@ Copy-paste BibTeX:
 }
 ```
 
-If you want to cite catJS itself (i.e. the software you actually ran), please
-cite its GitHub repository: <https://github.com/dfsp-spirit/catJS>.
+If you want to cite catjs-irt itself (i.e. the software you actually ran), please
+cite its GitHub repository: <https://github.com/dfsp-spirit/catjs-irt>.
 
 ### License
 
-The license of catJS is [GPLv3](./LICENSE), as catR is also published under
+The license of catjs-irt is [GPLv3](./LICENSE), as catR is also published under
 that license.
 
 ### Getting help
 
 Please note that the catR authors are not responsible for this partial port of
 catR to JS: do not contact them with requests for help. Please [open an
-issue](https://github.com/dfsp-spirit/catJS/issues) in this repo on GitHub
+issue](https://github.com/dfsp-spirit/catjs-irt/issues) in this repo on GitHub
 instead.

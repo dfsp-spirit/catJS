@@ -2,7 +2,7 @@
 # Generate a JSON reference of catR's output (nextItem MFI, thetaEst EAP,
 # semTheta EAP) for simulated participants on the real EWM item bank.
 #
-# This is the "ground truth" that the JS port in catJS must reproduce.
+# This is the "ground truth" that the JS port in catjs-irt must reproduce.
 #
 # Usage:
 #   Rscript scripts/generate_reference.R [path/to/itembank.csv]
