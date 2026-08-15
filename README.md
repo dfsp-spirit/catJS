@@ -7,10 +7,6 @@
 A faithful **JavaScript port of the most relevant feature subset of the R package
 [catR](https://cran.r-project.org/package=catR)**.
 
-> **API docs:** the generated TypeDoc reference is published to GitHub Pages at
-> <https://dfsp-spirit.github.io/catjs-irt/>. Build it locally with `npm run docs`
-> (outputs to `docs/`, gitignored).
-
 Useful to run psychological online experiments that require live computerized adaptive testing based on item response theory in browser-based platforms like jspsych.
 
 
@@ -145,6 +141,9 @@ npm run validate
 # Demo
 node examples/demo.mjs
 ```
+
+**API docs:** the generated TypeDoc reference is published to GitHub Pages at <https://dfsp-spirit.github.io/catjs-irt/>. Build it locally with `npm run docs` (outputs to `docs/`, gitignored).
+
 
 ## Scope / non-goals
 
