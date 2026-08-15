@@ -89,8 +89,8 @@ You can also run the checks locally if you have R with the catR package and a ch
 
 ```bash
 # 1. Generate ground-truth catR output (simulated participants)
-Rscript scripts/generate_reference.R /path/to/ewm/assets/csv/itembank.csv
-Rscript scripts/generate_reference_derivatives.R /path/to/ewm/assets/csv/itembank.csv
+Rscript scripts/generate_reference.R /path/to/your/itembank.csv
+Rscript scripts/generate_reference_derivatives.R /path/to/your/itembank.csv
 
 # 2. Replay every step in JS and compare
 node scripts/validate.mjs
