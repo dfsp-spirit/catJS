@@ -13,9 +13,18 @@ A faithful **JavaScript port of the most relevant feature subset of the R packag
 
 Useful to run psychological online experiments that require live computerized adaptive testing based on item response theory in browser-based platforms like jspsych.
 
-**This is a proof of concept.** It deliberately does *exactly* what catR does
-(including its quirks and numerics) so that stakeholders can verify *"does it
-do what catR does?"*. Improvements can come later — parity first.
+
+## Installation
+
+
+The catjs-irt package is available at [npmjs.com/package/catjs-irt](https://www.npmjs.com/package/catjs-irt).
+
+You can install it via npm:
+
+```shell
+npm install catjs-irt
+```
+
 
 ## What is ported
 
