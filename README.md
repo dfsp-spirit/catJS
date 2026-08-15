@@ -81,7 +81,11 @@ Item indices are **0-indexed** in the public API.
 ## Parity with catR (the proof of concept)
 
 The repo ships a validation harness that compares the JS port against the
-**real R `catR` package**:
+**real R `catR` package**.
+
+We verify this parity on every change to the package via continuous integration and automated software testing to ensure it does not degrade. You can check the [verify action](https://github.com/dfsp-spirit/catjs-irt/actions/workflows/validate.yml) here on GitHub if you know about GitHub actions.
+
+You can also run the checks locally if you have R with the catR package and a checkout of this repo:
 
 ```bash
 # 1. Generate ground-truth catR output (simulated participants)
