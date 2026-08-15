@@ -8,8 +8,8 @@
 A faithful **JavaScript port of the most relevant feature subset of the R package
 [catR](https://cran.r-project.org/package=catR)**.
 
-Useful to run psychological online experiments that require live computerized adaptive testing based on item response theory in browser-based platforms like jspsych.
 
+Provides Computerized Adaptive Testing (CAT) based on Item Response Theory (IRT) for psychological online experiments.
 
 
 ## About (The longer layman version)
