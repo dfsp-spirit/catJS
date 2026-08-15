@@ -21,6 +21,9 @@ Basically, this lets you run "smart" questionnaires that adapt to each person as
 * Simulate & test your test — it can generate fake response patterns and run entire adaptive sessions offline, so you can validate question banks and stopping rules before deploying the real experiment (e.g., in jsPsych)
 
 
+Read [this paper by the catR authors](https://www.jstatsoft.org/article/view/v048i08) for all the details.
+
+
 ## Installation
 
 
