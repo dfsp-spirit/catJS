@@ -137,10 +137,10 @@ npm run validate
 node examples/demo.mjs
 ```
 
-## Scope / non-goals (for now)
+## Scope / non-goals
 
-- Only the dichotomous model. Methods `EAP`/`BM`/`ML`/`WL`, priors
-  `norm`/`unif`/`Jeffreys`, and criteria `MFI`/`bOpt` are implemented; the rest
+- The dichotomous model with methods `EAP`/`BM`/`ML`/`WL`, priors
+  `norm`/`unif`/`Jeffreys`, and criteria `MFI`/`bOpt` are implemented. The rest
   of catR (polytomous models, other criteria, content balancing, exact SEM)
   raises a clear "not implemented" error.
 - `randomesque` is fixed at catR's default `1`.
@@ -162,6 +162,6 @@ All credits for the methods in catR, partly reproduced in catJS, go to the catR 
 * Magis D, Barrada JR (2017). “Computerized Adaptive Testing with R: Recent Updates of the Package catR.” Journal of Statistical Software, Code Snippets, 76(1), 1–19. doi:10.18637/jss.v076.c01.
 
 
-The license of catJS is GPLv3, as catR is also published under that license.
+The license of catJS is [GPLv3](./LICENSE), as catR is also published under that license.
 
 Please note that the catR authors are not responsible for this partial port of catR to JS: do not contact them with requests for help. Please [open an issue](https://github.com/dfsp-spirit/catJS/issues) in this repo here on Github instead.
