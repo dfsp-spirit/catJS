@@ -139,6 +139,6 @@ node examples/demo.mjs
 - The numerics mirror catR exactly, including its known weaknesses (raw
   product likelihood, 33-point grid). Making it *more* robust than catR is a
   deliberate follow-up, after parity is proven.
-- **Important:** on the real (degenerate) bank, BM/ML/WL are numerically
+- **Important:** on the real (degenerate) test item bank, BM/ML/WL are numerically
   unstable in catR *itself* (catR clamps ~1/3 of ML estimates to ±4). Only EAP
   is robust there — which is what the EWM experiment uses.
