@@ -1,7 +1,15 @@
 # catJS
 
+[![CI](https://github.com/dfsp-spirit/catJS/actions/workflows/ci.yml/badge.svg)](https://github.com/dfsp-spirit/catJS/actions/workflows/ci.yml)
+[![Validate](https://github.com/dfsp-spirit/catJS/actions/workflows/validate.yml/badge.svg)](https://github.com/dfsp-spirit/catJS/actions/workflows/validate.yml)
+[![Docs](https://github.com/dfsp-spirit/catJS/actions/workflows/docs.yml/badge.svg)](https://github.com/dfsp-spirit/catJS/actions/workflows/docs.yml)
+
 A faithful **JavaScript port of the most relevant feature subset of the R package
 [catR](https://cran.r-project.org/package=catR)**.
+
+> **API docs:** the generated TypeDoc reference is published to GitHub Pages at
+> <https://dfsp-spirit.github.io/catJS/>. Build it locally with `npm run docs`
+> (outputs to `docs/`, gitignored).
 
 Useful to run psychological online experiments that require live computerized adaptive testing based on item response theory in browser-based platforms like jspsych.
 
@@ -142,3 +150,14 @@ node examples/demo.mjs
 - **Important:** on the real (degenerate) test item bank, BM/ML/WL are numerically
   unstable in catR *itself* (catR clamps ~1/3 of ML estimates to ±4). Only EAP
   is robust there — which is what the EWM experiment uses.
+
+
+## Acknowledgements, Getting Help, Author and License
+
+The catJS package was written by [Tim Schäfer](https://ts.rcmd.org/), basically translating the [catR](https://cran.r-project.org/web/packages/catR/index.html) [source code](https://github.com/cran/catR) to JS. The catR R package was written by David Magis (U Liege, Belgium), Gilles Raiche (UQAM, Canada), Juan Ramon Barrada (U Zaragoza, Spain), and ist currently maintained by Cheng Hua.
+
+All credits for the methods in catR, partly reproduced in catJS, go to the catR authors. Please cite their paper when using this package in academic work.
+
+The license of catJS is GPLv3, as catR is also published under that license.
+
+Please note that the catR authors are not responsible for this partial port of catR to JS: do not contact them with requests for help. Please [open an issue](https://github.com/dfsp-spirit/catJS/issues) in this repo here on Github instead.

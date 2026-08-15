@@ -18,10 +18,14 @@
     "test": "node --test",
     "validate": "node scripts/validate.mjs",
     "gen:reference": "Rscript scripts/generate_reference.R",
-    "gen:derivatives": "Rscript scripts/generate_reference_derivatives.R"
+    "gen:derivatives": "Rscript scripts/generate_reference_derivatives.R",
+    "docs": "typedoc"
   },
   "license": "MIT",
   "engines": {
     "node": ">=18"
+  },
+  "devDependencies": {
+    "typedoc": "^0.28.20"
   }
 }
