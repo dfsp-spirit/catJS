@@ -154,14 +154,71 @@ node examples/demo.mjs
 
 ## Acknowledgements, Getting Help, Author and License
 
-The catJS package was written by [Tim Schäfer](https://ts.rcmd.org/), basically translating the [catR](https://cran.r-project.org/web/packages/catR/index.html) [source code](https://github.com/cran/catR) to JS. The catR R package was written by David Magis (U Liege, Belgium), Gilles Raiche (UQAM, Canada), Juan Ramon Barrada (U Zaragoza, Spain), and ist currently maintained by Cheng Hua.
+catJS was written by [Tim Schäfer](https://ts.rcmd.org/), who translated the
+[catR](https://cran.r-project.org/web/packages/catR/index.html)
+[source code](https://github.com/cran/catR) to JavaScript. **catJS is a
+JavaScript port of the R package `catR` — it is not written or endorsed by the
+catR authors.** All credit for the methods implemented here goes to them:
 
-All credits for the methods in catR, partly reproduced in catJS, go to the catR authors. Please cite their paper(s) when using this package in academic work, as indicated in their [citation file](https://cran.r-project.org/web/packages/catR/citation.html).
+- **David Magis** (University of Liège, Belgium)
+- **Gilles Raîche** (Université du Québec à Montréal, Canada)
+- **Juan Ramón Barrada** (University of Zaragoza, Spain)
 
-* Magis D, Raîche G (2012). “Random Generation of Response Patterns under Computerized Adaptive Testing with the R Package catR.” Journal of Statistical Software, 48(8), 1–31. doi:10.18637/jss.v048.i08.
-* Magis D, Barrada JR (2017). “Computerized Adaptive Testing with R: Recent Updates of the Package catR.” Journal of Statistical Software, Code Snippets, 76(1), 1–19. doi:10.18637/jss.v076.c01.
+The catR package is currently maintained by **Cheng Hua**.
 
+### Citing catR
 
-The license of catJS is [GPLv3](./LICENSE), as catR is also published under that license.
+If you use catJS in academic work, please cite the catR papers (and your own
+paper for the adaptive task, if applicable). The authoritative citation
+information is provided in the [catR citation
+file](https://cran.r-project.org/web/packages/catR/citation.html) on CRAN.
 
-Please note that the catR authors are not responsible for this partial port of catR to JS: do not contact them with requests for help. Please [open an issue](https://github.com/dfsp-spirit/catJS/issues) in this repo here on Github instead.
+- Magis D, Raîche G (2012). "Random Generation of Response Patterns under
+  Computerized Adaptive Testing with the R Package catR." *Journal of
+  Statistical Software*, 48(8), 1–31. doi:[10.18637/jss.v048.i08](https://doi.org/10.18637/jss.v048.i08)
+- Magis D, Barrada JR (2017). "Computerized Adaptive Testing with R: Recent
+  Updates of the Package catR." *Journal of Statistical Software, Code
+  Snippets*, 76(1), 1–19. doi:[10.18637/jss.v076.c01](https://doi.org/10.18637/jss.v076.c01)
+
+Copy-paste BibTeX:
+
+```bibtex
+@article{magis2012random,
+  author  = {Magis, David and Ra{\^\i}che, Gilles},
+  title   = {Random Generation of Response Patterns under Computerized
+             Adaptive Testing with the {R} Package {catR}},
+  journal = {Journal of Statistical Software},
+  year    = {2012},
+  volume  = {48},
+  number  = {8},
+  pages   = {1--31},
+  doi     = {10.18637/jss.v048.i08}
+}
+
+@article{magis2017computerized,
+  author  = {Magis, David and Barrada, Juan Ram{\'o}n},
+  title   = {Computerized Adaptive Testing with {R}: Recent Updates of the
+             Package {catR}},
+  journal = {Journal of Statistical Software, Code Snippets},
+  year    = {2017},
+  volume  = {76},
+  number  = {1},
+  pages   = {1--19},
+  doi     = {10.18637/jss.v076.c01}
+}
+```
+
+If you want to cite catJS itself (i.e. the software you actually ran), please
+cite its GitHub repository: <https://github.com/dfsp-spirit/catJS>.
+
+### License
+
+The license of catJS is [GPLv3](./LICENSE), as catR is also published under
+that license.
+
+### Getting help
+
+Please note that the catR authors are not responsible for this partial port of
+catR to JS: do not contact them with requests for help. Please [open an
+issue](https://github.com/dfsp-spirit/catJS/issues) in this repo on GitHub
+instead.

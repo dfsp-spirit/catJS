@@ -1,7 +1,7 @@
 {
-  "name": "catjs",
+  "name": "catjs-irt",
   "version": "0.1.0",
-  "description": "Faithful JavaScript port of the subset of the R catR package used by the EWM adaptive experiment (4PL IRF, MFI item selection, EAP ability estimation + SEM).",
+  "description": "Computerized adaptive testing in JavaScript — a faithful port of the R catR package: 4PL item response function, MFI/bOpt item selection, and EAP/BM/ML/WL ability estimation with standard errors.",
   "type": "module",
   "main": "src/index.js",
   "types": "src/index.d.ts",
@@ -15,13 +15,38 @@
     "src"
   ],
   "scripts": {
+    "prepublishOnly": "npm test",
     "test": "node --test",
     "validate": "node scripts/validate.mjs",
     "gen:reference": "Rscript scripts/generate_reference.R",
     "gen:derivatives": "Rscript scripts/generate_reference_derivatives.R",
     "docs": "typedoc"
   },
-  "license": "MIT",
+  "license": "GPL-3.0",
+  "author": {
+    "name": "Tim Schäfer",
+    "url": "https://ts.rcmd.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dfsp-spirit/catJS.git"
+  },
+  "homepage": "https://github.com/dfsp-spirit/catJS",
+  "bugs": {
+    "url": "https://github.com/dfsp-spirit/catJS/issues"
+  },
+  "keywords": [
+    "irt",
+    "item-response-theory",
+    "cat",
+    "computerized-adaptive-testing",
+    "adaptive-testing",
+    "catr",
+    "4pl",
+    "psychometrics",
+    "psychology"
+  ],
+  "sideEffects": false,
   "engines": {
     "node": ">=18"
   },
