@@ -156,7 +156,11 @@ node examples/demo.mjs
 
 The catJS package was written by [Tim Schäfer](https://ts.rcmd.org/), basically translating the [catR](https://cran.r-project.org/web/packages/catR/index.html) [source code](https://github.com/cran/catR) to JS. The catR R package was written by David Magis (U Liege, Belgium), Gilles Raiche (UQAM, Canada), Juan Ramon Barrada (U Zaragoza, Spain), and ist currently maintained by Cheng Hua.
 
-All credits for the methods in catR, partly reproduced in catJS, go to the catR authors. Please cite their paper when using this package in academic work.
+All credits for the methods in catR, partly reproduced in catJS, go to the catR authors. Please cite their paper(s) when using this package in academic work, as indicated in their [citation file](https://cran.r-project.org/web/packages/catR/citation.html).
+
+* Magis D, Raîche G (2012). “Random Generation of Response Patterns under Computerized Adaptive Testing with the R Package catR.” Journal of Statistical Software, 48(8), 1–31. doi:10.18637/jss.v048.i08.
+* Magis D, Barrada JR (2017). “Computerized Adaptive Testing with R: Recent Updates of the Package catR.” Journal of Statistical Software, Code Snippets, 76(1), 1–19. doi:10.18637/jss.v076.c01.
+
 
 The license of catJS is GPLv3, as catR is also published under that license.
 
