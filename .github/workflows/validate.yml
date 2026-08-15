@@ -1,0 +1,31 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: catR parity validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Ground-truth catR references (reference/catr_reference.json,
+      # reference/catr_reference_goodbank.json, reference/catr_derivatives.json)
+      # are committed, so the parity replay needs no R/catR install here.
+      # Regenerating them is a local step: it needs the EWM item bank CSV and
+      # the real catR package (see README "Parity with catR").
+      - name: Validate default (degenerate) bank
+        run: node scripts/validate.mjs
+
+      - name: Validate well-behaved synthetic bank (strict BM/ML/WL)
+        run: node scripts/validate.mjs reference/catr_reference_goodbank.json
