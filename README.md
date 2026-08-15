@@ -1,5 +1,6 @@
 # catjs-irt
 
+[![DOI](https://zenodo.org/badge/1334210641.svg)](https://doi.org/10.5281/zenodo.21944160)
 [![CI](https://github.com/dfsp-spirit/catjs-irt/actions/workflows/ci.yml/badge.svg)](https://github.com/dfsp-spirit/catjs-irt/actions/workflows/ci.yml)
 [![Validate](https://github.com/dfsp-spirit/catjs-irt/actions/workflows/validate.yml/badge.svg)](https://github.com/dfsp-spirit/catjs-irt/actions/workflows/validate.yml)
 [![Docs](https://github.com/dfsp-spirit/catjs-irt/actions/workflows/docs.yml/badge.svg)](https://github.com/dfsp-spirit/catjs-irt/actions/workflows/docs.yml)
@@ -216,8 +217,8 @@ Copy-paste BibTeX:
 }
 ```
 
-If you want to cite catjs-irt itself (i.e. the software you actually ran), please
-cite its GitHub repository: <https://github.com/dfsp-spirit/catjs-irt>.
+You should also `catjs-irt` (i.e. the software you actually ran) to ensure people can understand your workflow. To do so, please
+use the DOI of catjs-irt: [10.5281/zenodo.21944160](https://doi.org/10.5281/zenodo.21944160), the DOI page has full citation info.
 
 ### License
 
