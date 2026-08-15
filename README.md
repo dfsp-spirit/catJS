@@ -12,7 +12,7 @@ A faithful **JavaScript port of the most relevant feature subset of the R packag
 Provides Computerized Adaptive Testing (CAT) based on Item Response Theory (IRT) for psychological online experiments.
 
 
-## About (The longer layman version)
+## About
 
 Basically, this lets you run "smart" questionnaires that adapt to each person as they answer:
 
