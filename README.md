@@ -60,7 +60,17 @@ Faithfully replicated details:
   does not change sign.
 - MFI / bOpt selection with catR's random tie-breaking (`randomesque=1`).
 
-## Usage
+
+## Documentation
+
+
+### Full API Documentation
+
+
+See [dfsp-spirit.github.io/catjs-irt/](https://dfsp-spirit.github.io/catjs-irt/).
+
+
+### Quick Usage Example
 
 ```js
 import { estimateTheta, selectNextItem, randomCAT, genPattern } from 'catjs-irt';
