@@ -101,7 +101,7 @@ console.log(run.finalTheta, run.finalSe);
 
 Item indices are **0-indexed** in the public API.
 
-## Parity with catR (the proof of concept)
+## Parity with catR
 
 The repo ships a validation harness that compares the JS port against the
 **real R `catR` package**.
@@ -130,8 +130,7 @@ and reports maximum absolute differences.
 
 ### Measured results
 
-**Real EWM item bank (145 items, catR 3.17 / R 4.6.1)** — the experiment's
-exact path (EAP + MFI + bOpt):
+**Real EWM item bank (145 items, catR 3.17 / R 4.6.1)** (EAP + MFI + bOpt):
 
 | Quantity | Comparisons | Max \|diff\| |
 |----------|-------------|--------------|
