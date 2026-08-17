@@ -201,7 +201,7 @@ catR authors.** All credit for the methods implemented here goes to them:
 
 The catR package is currently maintained by **Cheng Hua**.
 
-### Citing catR
+### Citing
 
 If you use catjs-irt in academic work, please cite the catR papers (and your own
 paper for the adaptive task, if applicable). The authoritative citation
@@ -215,35 +215,8 @@ file](https://cran.r-project.org/web/packages/catR/citation.html) on CRAN.
   Updates of the Package catR." *Journal of Statistical Software, Code
   Snippets*, 76(1), 1–19. doi:[10.18637/jss.v076.c01](https://doi.org/10.18637/jss.v076.c01)
 
-Copy-paste BibTeX:
 
-```bibtex
-@article{magis2012random,
-  author  = {Magis, David and Ra{\^\i}che, Gilles},
-  title   = {Random Generation of Response Patterns under Computerized
-             Adaptive Testing with the {R} Package {catR}},
-  journal = {Journal of Statistical Software},
-  year    = {2012},
-  volume  = {48},
-  number  = {8},
-  pages   = {1--31},
-  doi     = {10.18637/jss.v048.i08}
-}
-
-@article{magis2017computerized,
-  author  = {Magis, David and Barrada, Juan Ram{\'o}n},
-  title   = {Computerized Adaptive Testing with {R}: Recent Updates of the
-             Package {catR}},
-  journal = {Journal of Statistical Software, Code Snippets},
-  year    = {2017},
-  volume  = {76},
-  number  = {1},
-  pages   = {1--19},
-  doi     = {10.18637/jss.v076.c01}
-}
-```
-
-You should also `catjs-irt` (i.e. the software you actually ran) to ensure people can understand your workflow. To do so, please
+You should also cite `catjs-irt` (i.e. the implementation you actually ran) to ensure people can understand your workflow. To do so, please
 use the DOI of catjs-irt: [10.5281/zenodo.21944160](https://doi.org/10.5281/zenodo.21944160), the DOI page has full citation info.
 
 ### License
