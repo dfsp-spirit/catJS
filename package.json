@@ -1,6 +1,6 @@
 {
   "name": "catjs-irt",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Computerized adaptive testing in JavaScript — a faithful port of the R catR package: 4PL item response function, MFI/bOpt item selection, and EAP/BM/ML/WL ability estimation with standard errors.",
   "type": "module",
   "main": "src/index.js",
@@ -13,10 +13,13 @@
     }
   },
   "files": [
-    "src"
+    "src",
+    "dist"
   ],
   "scripts": {
     "prepublishOnly": "npm test",
+    "prepack": "npm run build",
+    "build": "esbuild src/index.js --bundle --format=iife --global-name=catjsIrt --outfile=dist/catjs-irt.js && esbuild src/index.js --bundle --format=iife --global-name=catjsIrt --outfile=dist/catjs-irt.min.js --minify",
     "test": "node --test",
     "validate": "node scripts/validate.mjs",
     "gen:reference": "Rscript scripts/generate_reference.R",
@@ -52,6 +55,7 @@
     "node": ">=20"
   },
   "devDependencies": {
+    "esbuild": "^0.28.2",
     "typedoc": "^0.28.20"
   }
 }

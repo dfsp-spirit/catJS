@@ -1,10 +1,10 @@
 ## catjs-irt Changelog
 
+### v0.2.0
 
-
-### Current WIP
-
-* DOC: Improve README and docs 
-
+* NEW: ship pre-built browser bundles in `dist/` (`catjs-irt.js`, `catjs-irt.min.js`, global `catjsIrt`) for `<script>`/CDN usage without a bundler
+* NEW: build browser bundles with esbuild via `npm run build` (runs automatically through the `prepack` hook on `npm publish`)
+* ENH: `exports` map now includes a `default` condition, so CJS/`require()` consumers can load the package
+* ENH: require Node.js >= 20 (`engines`)
 
 ### v0.1.0 -- Initial Release

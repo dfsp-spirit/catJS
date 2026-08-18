@@ -35,6 +35,28 @@ You can install it via npm:
 npm install catjs-irt
 ```
 
+### Browser usage (no bundler)
+
+If you cannot use a bundler (e.g. a jsPsych experiment loaded from a CDN), the
+package ships a pre-built browser bundle, `dist/catjs-irt.min.js` in the npm
+tarball, which exposes a global `catjsIrt` object. Load it with a plain
+`<script>` tag:
+
+```html
+<script src="https://unpkg.com/catjs-irt@0.2.0/dist/catjs-irt.min.js"></script>
+<script>
+  const bank = [{ a: 1.0, b: -1.0, c: 0.20, d: 0.95 }, /* ... */];
+  const { item } = catjsIrt.selectNextItem(bank, 0.0, []);
+  console.log(item);
+</script>
+```
+
+The bundle is also served by [jsDelivr](https://cdn.jsdelivr.net/npm/catjs-irt/),
+or you can host `dist/catjs-irt.min.js` yourself. An unminified
+`dist/catjs-irt.js` is shipped as well, for debugging. If you use a bundler
+(Vite, webpack, esbuild), just use `import` as in the usage example below — the
+bundler consumes the ESM source directly.
+
 
 ## What is ported
 
@@ -171,6 +193,20 @@ npm run validate
 node examples/demo.mjs
 ```
 
+### Building the browser bundle
+
+The browser bundles in `dist/` are generated with [esbuild](https://esbuild.github.io/):
+
+```bash
+npm run build   # writes dist/catjs-irt.js (unminified) and dist/catjs-irt.min.js
+```
+
+`dist/` is a build artifact: it is gitignored, regenerated automatically by the
+`prepack` hook before every `npm pack`/`npm publish`, and included in the
+published tarball (see `files` in `package.json`) so CDNs such as unpkg and
+jsDelivr can serve it. The CI workflow also runs `npm run build` so the bundle
+is always verified to build.
+
 ### Generating docs
 
 **API docs:** the generated TypeDoc reference is published to GitHub Pages at <https://dfsp-spirit.github.io/catjs-irt/>. Build it locally with `npm run docs` (outputs to `docs/`, gitignored).
@@ -178,12 +214,12 @@ node examples/demo.mjs
 
 ### Making a release
 
-* log recent changes in CHANGES
-* bump version
-* make sure tests pass
-* push to github, make sure tests pass on CI
-* tag the commit
-* publish to npmjs.com
+* log recent changes in `CHANGES`
+* bump the version in `package.json` and `package-lock.json` (e.g. `npm version 0.2.0 --no-git-tag-version` updates both)
+* make sure tests pass and the browser bundle builds: `npm test` and `npm run build`
+* push to GitHub and make sure the CI checks (unit tests, catR parity validation, docs) pass
+* tag the commit (e.g. `git tag v0.2.0 && git push --tags`)
+* publish to npmjs.com — `npm publish` runs the tests (`prepublishOnly`) and builds the browser bundle (`prepack`) automatically
 
 
 ## Scope / non-goals
