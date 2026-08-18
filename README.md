@@ -156,6 +156,8 @@ bank with: `node scripts/validate.mjs reference/catr_reference_goodbank.json`.
 
 ## Development
 
+### Running tests
+
 ```bash
 # Unit tests (Node built-in runner, no dependencies)
 node --test test/
@@ -169,7 +171,19 @@ npm run validate
 node examples/demo.mjs
 ```
 
+### Generating docs
+
 **API docs:** the generated TypeDoc reference is published to GitHub Pages at <https://dfsp-spirit.github.io/catjs-irt/>. Build it locally with `npm run docs` (outputs to `docs/`, gitignored).
+
+
+### Making a release
+
+* log recent changes in CHANGES
+* bump version
+* make sure tests pass
+* push to github, make sure tests pass on CI
+* tag the commit
+* publish to npmjs.com
 
 
 ## Scope / non-goals
